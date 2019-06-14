@@ -7,10 +7,59 @@
         <script src="vendors/processing.min.js"></script>
     </head>
     <body>
-        <h1>Processing project by Antonio</h1>
+        <h1>Processing project by Margherita</h1>
         <script type="text/processing">
 
-            // Write your project here
+float raggio;
+float y=0;
+
+void setup(){
+  size(600  ,600);
+}
+void draw(){
+  raggio +=1;
+  background(0);
+  pushMatrix();
+  translate(width/2,height/2);
+  rotate(radians(raggio));
+  //sole
+  fill(255,255,0);
+  ellipse(0,0,50,50);
+  //mercurio
+  fill(99,58,52);
+  ellipse(35,0,10,10);
+  //venere
+  fill(85,74,67);
+  ellipse(55,y,11,11);
+  //terra
+  fill(0,255,100);
+  ellipse(75,y,12,12);
+  pushMatrix();
+  //luna
+  translate(75,y);
+  rotate(radians(-raggio*2));
+  fill(255);
+  ellipse(7,7,5,5);
+  popMatrix();
+  //marte
+  fill(255,117,20);
+  ellipse(95,y,12,12);
+  //giove
+  fill(99,74,67);
+  ellipse(140,y,50,50);
+  //saturno
+  fill(198,166,100);
+  ellipse(140,y,50,50);
+  fill(245,255,0);
+  rect(115,-4,50 ,6);
+  //urano
+  fill(153,203,255);
+  ellipse(200,y,23,23);
+  //nettuno
+  fill(37,40,80);
+  ellipse(240,y,23,23);
+popMatrix();
+}
             
             // Example
             void setup() {
